@@ -168,9 +168,11 @@
 				TargetAttributes = {
 					C3245B3D19EAB9BC00910FD9 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = E38Y23T5KH;
 					};
 					C3245B5619EAB9BC00910FD9 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = E38Y23T5KH;
 						TestTargetID = C3245B3D19EAB9BC00910FD9;
 					};
 				};
@@ -363,6 +365,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -374,6 +378,7 @@
 				INFOPLIST_FILE = TimeCheckTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeCheck.app/TimeCheck";
 			};
 			name = Debug;
@@ -382,6 +387,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -389,6 +396,7 @@
 				INFOPLIST_FILE = TimeCheckTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeCheck.app/TimeCheck";
 			};
 			name = Release;
@@ -412,6 +420,7 @@
 				C3245B6319EAB9BC00910FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3245B6419EAB9BC00910FD9 /* Build configuration list for PBXNativeTarget "TimeCheckTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +429,7 @@
 				C3245B6619EAB9BC00910FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
