@@ -48,39 +48,73 @@
 
 // 範囲確認
 - (Boolean)isCheck{
-    // ex. 開始時刻：23時 終了時刻：1時
+
+    UIAlertController *alertError = [UIAlertController alertControllerWithTitle:@"範囲判定" message:@"範囲外です" preferredStyle:UIAlertControllerStyleAlert];
+
+    // ex. 開始時刻：23時 終了時刻：1時 指定時刻：24時
     if (_StartTimeText.text.integerValue > _EndTimeText.text.integerValue) {
-        if (_StartTimeText.text.integerValue >= _DesignationTimeText.text.integerValue  ||
-            _DesignationTimeText.text.integerValue > _EndTimeText.text.integerValue) {
-            NSLog(@"NO");
+        if (_EndTimeText.text.integerValue <= _DesignationTimeText.text.integerValue  &&
+            _DesignationTimeText.text.integerValue < _StartTimeText.text.integerValue) {
+
+            [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertError animated:YES completion:nil];
+            
+            return NO;
+        }
+    }else if(_StartTimeText.text.integerValue < _EndTimeText.text.integerValue){
+        if (_EndTimeText.text.integerValue <= _DesignationTimeText.text.integerValue  ||
+            _DesignationTimeText.text.integerValue <
+            _StartTimeText.text.integerValue) {
+
+            [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertError animated:YES completion:nil];
 
             return NO;
         }
-    }else{
-        if (_EndTimeText.text.integerValue >= _DesignationTimeText.text.integerValue  ||
-            _DesignationTimeText.text.integerValue > _StartTimeText.text.integerValue) {
-            NSLog(@"NO");
-
+    }else if (_StartTimeText.text.integerValue == _EndTimeText.text.integerValue){
+        if (_StartTimeText.text.integerValue != _DesignationTimeText.text.integerValue) {
+            
+            [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertError animated:YES completion:nil];
             return NO;
         }
     }
     
-    NSLog(@"YES");
+    UIAlertController *alertSucces = [UIAlertController alertControllerWithTitle:@"範囲判定" message:@"範囲内です" preferredStyle:UIAlertControllerStyleAlert];
 
+    
+    [alertSucces addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    
+    
     return YES;
 }
 
 // 時刻確認
 - (Boolean)isTime {
-    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"時刻を入力してください。\n１時から24時までです。" message:nil preferredStyle:UIAlertControllerStyleAlert];
+
     if ( _StartTimeText.text.integerValue < 1  || _StartTimeText.text.integerValue > 24) {
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+
+        
+        NSLog(@"NOOOO");
         return NO;
     }
     if ( _EndTimeText.text.integerValue < 1  || _EndTimeText.text.integerValue > 24) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+
+        
         return NO;
     }
     
     if ( _DesignationTimeText.text.integerValue < 1  || _DesignationTimeText.text.integerValue > 24) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+
         return NO;
     }
 
