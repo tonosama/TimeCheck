@@ -2,7 +2,7 @@
 //  ViewController.m
 //  TimeCheck
 //
-//  Created by 寺本生 on 2014/10/12.
+//  Created by tonosama on 2014/10/12.
 //  Copyright (c) 2014年 tono. All rights reserved.
 //
 
