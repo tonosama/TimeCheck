@@ -83,10 +83,10 @@
     UIAlertController *alertSucces = [UIAlertController alertControllerWithTitle:@"範囲判定" message:@"範囲内です" preferredStyle:UIAlertControllerStyleAlert];
 
     
-    [alertSucces addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    }]];
+    [alertSucces addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     
-    
+    [self presentViewController:alertSucces animated:YES completion:nil];
+
     return YES;
 }
 
