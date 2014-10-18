@@ -56,7 +56,7 @@
     
     // ex. 開始時刻：23時 終了時刻：1時 指定時刻：24時
     if (_startTime > _endTime) {
-        if (_endTimeText.text.integerValue <= _designationTimeText.text.integerValue  &&
+        if (_endTime <= _designationTime  &&
             _designationTime < _startTime) {
 
             [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
