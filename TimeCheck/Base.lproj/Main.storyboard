@@ -60,10 +60,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="DesignationTimeText" destination="JPO-Zm-RS6" id="Tis-OO-6dz"/>
-                        <outlet property="EndTimeText" destination="aHK-rD-oJp" id="XQn-uv-VFN"/>
-                        <outlet property="StartTimeText" destination="hZu-pV-vJN" id="Ngo-lT-DCb"/>
-                        <outlet property="TimeCheckBtn" destination="xch-X8-Bbn" id="g25-Iq-fNM"/>
+                        <outlet property="designationTimeText" destination="JPO-Zm-RS6" id="hez-zI-UU9"/>
+                        <outlet property="endTimeText" destination="aHK-rD-oJp" id="IgO-za-dZd"/>
+                        <outlet property="startTimeText" destination="hZu-pV-vJN" id="9MN-Ts-TRs"/>
+                        <outlet property="timeCheckBtn" destination="xch-X8-Bbn" id="TtV-un-TB6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
