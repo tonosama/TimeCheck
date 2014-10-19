@@ -18,10 +18,10 @@
     NSInteger _designationTime;
 }
 
-@property (nonatomic) IBOutlet UITextField *startTimeText; // 開始時刻
-@property (nonatomic) IBOutlet UITextField *endTimeText; // 終了時刻
+@property (nonatomic) IBOutlet UITextField *startTimeText;       // 開始時刻
+@property (nonatomic) IBOutlet UITextField *endTimeText;         // 終了時刻
 @property (nonatomic) IBOutlet UITextField *designationTimeText; // 指定時刻
-@property (nonatomic) IBOutlet UIButton *timeCheckBtn; // 判定ボタン
+@property (nonatomic) IBOutlet UIButton *timeCheckBtn;           // 判定ボタン
 
 - (IBAction)TimeCheckAct:(id)sender;
 - (Boolean)isCheck;
@@ -40,9 +40,8 @@
 // 判定ボタンのアクション
 - (IBAction)TimeCheckAct:(id)sender {
 
-    if([self isTime] == YES ){
+    if([self isTime]){
         [self isCheck];
-        
     }
 }
 
@@ -56,8 +55,7 @@
     
     // ex. 開始時刻：23時 終了時刻：1時 指定時刻：24時
     if (_startTime > _endTime) {
-        if (_endTime <= _designationTime  &&
-            _designationTime < _startTime) {
+        if (_endTime <= _designationTime && _designationTime < _startTime) {
 
             [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alertError animated:YES completion:nil];
@@ -65,7 +63,7 @@
             return NO;
         }
     }else if(_startTime < _endTime){
-        if (_endTime <= _designationTime  || _designationTime <_startTime) {
+        if (_endTime <= _designationTime || _designationTime < _startTime) {
 
             [alertError addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alertError animated:YES completion:nil];
@@ -101,20 +99,20 @@
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"時刻を入力してください。\n１時から24時までです。" message:nil preferredStyle:UIAlertControllerStyleAlert];
 
-    if ( _startTime < 1  || _startTime > 24) {
+    if (_startTime < 1 || _startTime > 24) {
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
         
         return NO;
     }
-    if ( _endTime < 1  || _endTime > 24) {
+    if (_endTime < 1 || _endTime > 24) {
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
         
         return NO;
     }
     
-    if ( _designationTime < 1  || _designationTime > 24) {
+    if (_designationTime < 1 || _designationTime > 24) {
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
 
